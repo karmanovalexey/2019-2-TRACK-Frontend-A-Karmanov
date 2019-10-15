@@ -3,7 +3,7 @@
   "homepage": "https://karmanovalexey.github.io/2019-2-Track-Frontend-A-Karmanov/",
   "description": "Mail.Ru Group Frontend Track course, 2019",
   "version": "0.1.0",
-  "author": "Vladislav Illarionov",
+  "author": "Karmanov Alexey",
   "scripts": {
     "lint": "eslint .",
     "test": "npm run lint",
