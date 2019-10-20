@@ -70,12 +70,12 @@ class ConverWind extends HTMLElement {
     if (this.$input.value === '') {
       return;
     }
-    this.messageObj = {};
-    this.messageObj.messageText = this.$input.value;
-    this.messageObj.sendingTime = new Date();
-    this.addMessage(this.messageObj);
+    const messageObj = {};
+    messageObj.messageText = this.$input.value;
+    messageObj.sendingTime = new Date();
+    this.addMessage(messageObj);
     this.$input.value = '';
-    this.messageToLocal(this.messageObj);
+    this.messageToLocal(messageObj);
   }
 
   addMessage(messageObj) {
