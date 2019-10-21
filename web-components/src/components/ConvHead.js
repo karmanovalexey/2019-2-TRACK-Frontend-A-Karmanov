@@ -230,6 +230,7 @@ class ConvHead extends HTMLElement {
     super();
     this.shadowRoot = this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
+    this.$backbutton = this.shadowRoot.querySelector('.back');
   }
 }
 

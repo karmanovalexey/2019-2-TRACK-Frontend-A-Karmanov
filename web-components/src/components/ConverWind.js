@@ -44,15 +44,23 @@ class ConverWind extends HTMLElement {
     this.shadowRoot.appendChild(template.content.cloneNode(true));
 
     this.$conversation = this.shadowRoot.querySelector('.conversation');
-    this.$input = this.shadowRoot.querySelector('form-input');
+    this.$head = this.shadowRoot.querySelector('conv-head');
+    this.$backbutton = this.$head.$backbutton;
     this.$chatContainer = this.shadowRoot.querySelector('.message-container');
-    this.$button = this.$input.$button;
+    this.$input = this.shadowRoot.querySelector('form-input');
+    this.$sendbutton = this.$input.$sendbutton;
 
     this.myRender();
 
     this.$conversation.addEventListener('submit', this.onSubmit.bind(this));
     this.$conversation.addEventListener('keypress', this.onKeyPress.bind(this));
-    this.$button.addEventListener('click', this.onClick.bind(this));
+    this.$sendbutton.addEventListener('click', this.onClick.bind(this));
+    this.$backbutton.addEventListener('click', this.onBack.bind(this));
+  }
+
+  onBack(event) {
+    event.preventDefault();
+    this.$conversation.style.display = 'none';
   }
 
   onKeyPress(event) {
