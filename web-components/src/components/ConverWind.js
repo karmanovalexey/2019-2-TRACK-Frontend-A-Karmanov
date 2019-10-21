@@ -6,12 +6,6 @@ const messagesArrayKey = 'messagesArray';
 
 template.innerHTML = `
 <style>
-  .conversation{
-    display: flex;
-    flex-direction: column;
-    height: calc(100% - 5px);
-  }
-
   .message-container{
     width: 100%;
     height: 100%;
@@ -28,13 +22,11 @@ template.innerHTML = `
     margin-right: 2vh;
   }
 </style>
-<form class="conversation">
   <conv-head></conv-head>
   <div class="message-container">
 
   </div>
   <form-input placeholder="Enter your message"></form-input>
-</form>
 `;
 
 class ConverWind extends HTMLElement {
@@ -43,7 +35,8 @@ class ConverWind extends HTMLElement {
     this.shadowRoot = this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
 
-    this.$conversation = this.shadowRoot.querySelector('.conversation');
+    this.$page = document.querySelector('body');
+
     this.$head = this.shadowRoot.querySelector('conv-head');
     this.$backbutton = this.$head.$backbutton;
     this.$chatContainer = this.shadowRoot.querySelector('.message-container');
@@ -52,25 +45,26 @@ class ConverWind extends HTMLElement {
 
     this.myRender();
 
-    this.$conversation.addEventListener('submit', this.onSubmit.bind(this));
-    this.$conversation.addEventListener('keypress', this.onKeyPress.bind(this));
+    this.addEventListener('submit', this.onSubmit.bind(this));
+    this.addEventListener('keypress', this.onKeyPress.bind(this));
     this.$sendbutton.addEventListener('click', this.onClick.bind(this));
     this.$backbutton.addEventListener('click', this.onBack.bind(this));
   }
 
   onBack(event) {
     event.preventDefault();
-    this.$conversation.style.display = 'none';
+    this.style.display = 'none';
+    this.$page.appendChild(this.$input);
   }
 
   onKeyPress(event) {
     if (event.keyCode === 13) {
-      this.$conversation.dispatchEvent(new Event('submit'));
+      this.dispatchEvent(new Event('submit'));
     }
   }
 
   onClick() {
-    this.$conversation.dispatchEvent(new Event('submit'));
+    this.dispatchEvent(new Event('submit'));
   }
 
   onSubmit(event) {
