@@ -1,0 +1,118 @@
+.top-line{
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.back {
+  width: 40px;
+  height: 40px;
+  border: none;
+  outline: none;
+  margin: 0 5px 0 15px;
+  border-radius: 100%;
+  background-color: transparent;
+}
+
+.back-icon {
+  fill: rgb(24, 58, 55);
+  width: 100%;
+  height: 100%;
+}
+
+.back:focus, .back:hover .back-icon{
+  fill: rgb(255, 255, 255);
+  transition: 0.2s;
+}
+
+.back:active { 
+  background: rgba(24, 58, 55 ,.5);
+  transition: 0.1s;
+}
+
+.interlocutor {
+  height: 100%;
+  width: calc(100% - 180px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.interlocutor-icon {
+  fill: rgb(24, 58, 55);
+  width: 40px;
+  height: 40px;
+  padding: 0 10px;
+}
+
+.interlocutor-info {
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  color: rgb(24, 58, 55);
+}
+
+.interlocutor-name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.interlocutor-time{
+  font-size: 10px;
+}
+
+.search {
+  width: 40px;
+  height: 40px;
+  border: none;
+  outline: none;
+  margin: 0 5px 0 15px;
+  border-radius: 100%;
+  background-color: rgb(212, 212, 211);
+}
+
+.search-icon {
+  fill: rgb(24, 58, 55);
+  width: 100%;
+  height: 100%;
+}
+
+.search:focus, .search:hover .search-icon{
+  fill: rgb(255, 255, 255);
+  transition: 0.2s;
+}
+
+.search:active { 
+  background: rgba(24, 58, 55 ,.5);
+  transition: 0.1s;
+}
+
+.more {
+  width: 40px;
+  height: 40px;
+  border: none;
+  outline: none;
+  margin: 0 15px 0 5px;
+  border-radius: 100%;
+  background-color: rgb(212, 212, 211);
+}
+
+.more-icon {
+  fill: rgb(24, 58, 55);
+  width: 100%;
+  height: 100%;
+}
+
+.more:focus, .more:hover .more-icon{
+  fill: rgb(255, 255, 255);
+  transition: 0.2s;
+}
+
+.more:active { 
+  background: rgba(24, 58, 55 ,.5);
+  transition: 0.1s;
+}

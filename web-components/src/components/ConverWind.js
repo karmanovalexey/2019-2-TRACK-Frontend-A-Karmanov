@@ -1,38 +1,16 @@
 /* eslint-disable no-undef */
-// eslint-disable-next-line no-undef
+import content from './ConverWind.template';
+
 const template = document.createElement('template');
 const messagesArrayKey = 'messagesArray';
 
 
-template.innerHTML = `
-<style>
-  .message-container{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    overflow-y: scroll;
-  }
-
-  message-form {
-    max-width: 80%;
-    min-width: 30%;
-    align-items: flex-end;
-    align-self: flex-end;
-    margin-right: 2vh;
-  }
-</style>
-  <conv-head></conv-head>
-  <div class="message-container">
-
-  </div>
-  <form-input placeholder="Enter your message"></form-input>
-`;
+template.innerHTML = content;
 
 class ConverWind extends HTMLElement {
   constructor() {
     super();
-    this.shadowRoot = this.attachShadow({ mode: 'open' });
+    this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
 
     this.$page = document.querySelector('body');
@@ -54,7 +32,9 @@ class ConverWind extends HTMLElement {
   onBack(event) {
     event.preventDefault();
     this.style.display = 'none';
-    this.$page.appendChild(this.$input);
+
+    const newhead = document.createElement('chatlist-head');
+    this.$page.appendChild(newhead);
   }
 
   onKeyPress(event) {
