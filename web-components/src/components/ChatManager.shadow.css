@@ -1,0 +1,11 @@
+conver-window {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 5px);
+}
+
+chatlist-head {
+  width: 100%;
+  background-color: rgba(24, 58, 55 ,.5);
+  height: 50px;
+}

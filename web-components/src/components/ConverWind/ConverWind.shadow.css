@@ -13,3 +13,12 @@ message-form {
   align-self: flex-end;
   margin-right: 2vh;
 }
+
+form-input {
+  width: 100%;
+}
+
+
+conv-head {
+  width: 100%;
+}

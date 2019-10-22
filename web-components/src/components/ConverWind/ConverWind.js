@@ -13,7 +13,7 @@ class ConverWind extends HTMLElement {
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
 
-    this.$page = document.querySelector('body');
+    this.$chat = document.querySelector('chat-manager');
 
     this.$head = this.shadowRoot.querySelector('conv-head');
     this.$backbutton = this.$head.$backbutton;
@@ -33,8 +33,8 @@ class ConverWind extends HTMLElement {
     event.preventDefault();
     this.style.display = 'none';
 
-    const newhead = document.createElement('chatlist-head');
-    this.$page.appendChild(newhead);
+    const chatlist = document.createElement('chat-list');
+    this.$chat.shadowRoot.appendChild(chatlist);
   }
 
   onKeyPress(event) {
