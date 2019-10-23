@@ -18,7 +18,7 @@
   height: auto;
   word-break: break-word;  
   padding: 10px 10px 5px 20px;
-  font-size: calc(2vh + 10px);
+  font-size: calc(2vh + 6px);
 }
 
 .time{

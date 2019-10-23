@@ -10,6 +10,10 @@ class ChatForm extends HTMLElement {
     super();
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
+
+    this.$interlocutor = this.shadowRoot.querySelector('.name');
+    this.$text = this.shadowRoot.querySelector('.message');
+    this.$time = this.shadowRoot.querySelector('.time');
   }
 }
 

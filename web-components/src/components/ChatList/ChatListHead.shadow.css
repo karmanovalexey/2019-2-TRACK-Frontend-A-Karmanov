@@ -1,0 +1,56 @@
+.search {
+  width: 40px;
+  height: 40px;
+  border: none;
+  outline: none;
+  margin: 0 30px 0 15px;
+  border-radius: 100%;
+  background-color: transparent;
+}
+
+.search-icon {
+  fill: rgb(24, 58, 55);
+  width: 100%;
+  height: 100%;
+}
+
+.search:focus, .search:hover .search-icon{
+  fill: rgb(255, 255, 255);
+  transition: 0.2s;
+}
+
+.search:active { 
+  background: rgba(24, 58, 55 ,.5);
+  transition: 0.1s;
+}
+
+.burger {
+  width: 40px;
+  height: 40px;
+  border: none;
+  outline: none;
+  margin: 0 5px 0 30px;
+  border-radius: 100%;
+  background-color: transparent;
+}
+
+.burger-icon {
+  fill: rgb(24, 58, 55);
+  width: 100%;
+  height: 100%;
+}
+
+.burger:focus, .burger:hover .burger-icon{
+  fill: rgb(255, 255, 255);
+  transition: 0.2s;
+}
+
+.burger:active { 
+  background: rgba(24, 58, 55 ,.5);
+  transition: 0.1s;
+}
+
+.header {
+  margin: 0 auto;
+  font-size: 36px;
+}

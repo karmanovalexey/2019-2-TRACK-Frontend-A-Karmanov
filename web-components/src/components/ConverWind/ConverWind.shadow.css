@@ -20,8 +20,9 @@ form-input {
 
 
 conv-head {
+  background-color: rgb(194, 194, 194);
   width: 100%;
   border-bottom: solid;
-  border-width: 1px;
-  border-color: gray;
+  border-width: 2px;
+  border-color: rgb(24, 58, 55);
 }
