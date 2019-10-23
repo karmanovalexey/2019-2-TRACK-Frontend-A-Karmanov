@@ -5,6 +5,7 @@ const template = `
   ${style}
 </style>
 <conver-window></conver-window>
+<chat-list></chat-list>
 `;
 
 export default template;

@@ -10,6 +10,16 @@ class ChatManager extends HTMLElement {
     super();
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
+
+    this.$converwind = this.shadowRoot.querySelector('conver-window');
+    this.$chatlist = this.shadowRoot.querySelector('chat-list');
+    this.$converwind.$head.$backbutton.addEventListener('click', this.onChatBack.bind(this));
+  }
+
+  onChatBack(event) {
+    event.preventDefault();
+    this.$converwind.style.display = 'none';
+    this.$chatlist.style.display = 'flex';
   }
 }
 
