@@ -1,5 +1,8 @@
 /* eslint-disable no-undef */
 import content from './ChatListContent.template';
+import ToLocal, { DateToTime } from '../Functions';
+
+const ChatsArrayKey = 'Chats';
 
 const template = document.createElement('template');
 
@@ -12,6 +15,7 @@ class ChatListContent extends HTMLElement {
     this.shadowRoot.appendChild(template.content.cloneNode(true));
     this.$createchat = this.shadowRoot.querySelector('.createchat');
 
+    this.ChatRender();
     this.$createchat.addEventListener('click', this.onChatCreate.bind(this));
   }
 
@@ -21,18 +25,28 @@ class ChatListContent extends HTMLElement {
     const chatObj = {};
     chatObj.interlocutor = 'Name';
     chatObj.text = 'text';
-    chatObj.time = 'time';
-
+    chatObj.time = new Date();
+    chatObj.key = Math.random(); // Symbol mb?
     this.addChat(chatObj);
+    ToLocal(chatObj, ChatsArrayKey);
   }
 
   addChat(chat) {
     const newchat = document.createElement('chat-form');
     newchat.$interlocutor.innerText = chat.interlocutor;
     newchat.$text.innerText = chat.text;
-    newchat.$time.innerText = chat.time;
-
+    newchat.$time.innerText = DateToTime(chat.time);
     this.shadowRoot.appendChild(newchat);
+  }
+
+  ChatRender() {
+    const chatArray = JSON.parse(localStorage.getItem(ChatsArrayKey));
+    if (chatArray === null) {
+      return;
+    }
+    for (let i = 0; i < chatArray.length; i += 1) {
+      this.addChat(chatArray[i]);
+    }
   }
 }
 

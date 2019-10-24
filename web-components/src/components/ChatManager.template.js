@@ -4,8 +4,8 @@ const template = `
 <style>
   ${style}
 </style>
-<conver-window></conver-window>
 <chat-list></chat-list>
+<conver-window></conver-window>
 `;
 
 export default template;
