@@ -1,5 +1,6 @@
 import './index.css';
 
+import './components/Functions';
 import './components/ConverWind/ConvHead';
 import './components/ConverWind/FormInput';
 import './components/ConverWind/MessageForm';
