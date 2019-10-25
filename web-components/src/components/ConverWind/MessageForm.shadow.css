@@ -1,0 +1,28 @@
+.bubble{
+  background-color: rgba(24, 58, 55 ,.8);
+  width: 100%;
+  display: inline-flex;
+  line-height: 4vh;
+  flex-direction: column;
+  border-radius: 3vh;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  align-items: flex-end;
+}
+
+.text{
+  color: white;
+  display: flex;
+  align-self: self-end;
+  width: auto;
+  height: auto;
+  word-break: break-word;  
+  padding: 10px 10px 5px 20px;
+  font-size: calc(2vh + 6px);
+}
+
+.time{
+  color: rgb(212, 212, 212);
+  margin-right: 3vh;
+  font-size: 2vh;       
+}
