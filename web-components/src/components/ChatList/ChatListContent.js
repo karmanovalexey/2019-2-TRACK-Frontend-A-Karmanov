@@ -37,6 +37,8 @@ class ChatListContent extends HTMLElement {
     newchat.$text.innerText = chat.text;
     newchat.$time.innerText = DateToTime(chat.time);
     this.shadowRoot.appendChild(newchat);
+    newchat.scrollIntoView();
+    newchat.animateChat();
   }
 
   ChatRender() {

@@ -11,7 +11,26 @@ class FormInput extends HTMLElement {
     this.shadowRoot.appendChild(template.content.cloneNode(true));
 
     this.$input = this.shadowRoot.querySelector('input');
+    this.$attachbutton = this.shadowRoot.querySelector('.attach');
     this.$sendbutton = this.shadowRoot.querySelector('.send');
+    this.$buttons = this.shadowRoot.querySelector('.buttons');
+  }
+
+  animateOnSending() {
+    const ButOptions = { duration: 1000 };
+    const ButtonKeyframes = [
+      { opacity: 1, width: '120px' },
+      { opacity: 0, width: '50px' },
+      { opacity: 1, width: '120px' },
+    ];
+    const InpOptions = { duration: 1000 };
+    const InputKeyframes = [
+      { width: 'calc(100% - 120px)' },
+      { width: 'calc(280px)' },
+      { width: 'calc(100% - 120px)' },
+    ];
+    this.$buttons.animate(ButtonKeyframes, ButOptions);
+    this.$input.animate(InputKeyframes, InpOptions);
   }
 
   static get observedAttributes() {
