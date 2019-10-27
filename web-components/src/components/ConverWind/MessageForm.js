@@ -13,6 +13,15 @@ class MessageForm extends HTMLElement {
     this.$text = this.shadowRoot.querySelector('.text');
     this.$time = this.shadowRoot.querySelector('.time');
   }
+
+  animateMessage() {
+    const options = { duration: 700 };
+    const keyframes = [
+      { transform: 'translateY(100vh)' },
+      { transform: 'translateY(0vh)' },
+    ];
+    this.animate(keyframes, options);
+  }
 }
 
 customElements.define('message-form', MessageForm);

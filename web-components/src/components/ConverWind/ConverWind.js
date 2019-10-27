@@ -18,9 +18,7 @@ class ConverWind extends HTMLElement {
     this.$chatContainer = this.shadowRoot.querySelector('.message-container');
     this.$input = this.shadowRoot.querySelector('form-input');
     this.$sendbutton = this.$input.$sendbutton;
-
     this.ChatRender();
-
     this.addEventListener('submit', this.onSubmit.bind(this));
     this.addEventListener('keypress', this.onKeyPress.bind(this));
     this.$sendbutton.addEventListener('click', this.onClick.bind(this));
@@ -53,8 +51,11 @@ class ConverWind extends HTMLElement {
     const messageBox = document.createElement('message-form');
     messageBox.$text.innerText = messageObj.messageText;
     messageBox.$time.innerText = DateToTime(messageObj.sendingTime);
+    this.$input.focus();
     this.$chatContainer.appendChild(messageBox);
-    this.$chatContainer.scrollTop = 9999;
+    messageBox.scrollIntoView();
+    messageBox.animateMessage();
+    this.$input.animateOnSending();
   }
 
   ChatRender() {

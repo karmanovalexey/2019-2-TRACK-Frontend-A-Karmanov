@@ -1,6 +1,7 @@
 .line-block {
   display: flex;
   flex-direction: row;
+  justify-content: flex-end;
   align-items: center;
   height: 40px;
   width: 100%;
@@ -9,19 +10,19 @@
 input {
   border-width: 1.4px;
   border-radius: 35px;
-  border-color: rgb(24, 58, 55);
+  border-color: rgba(24, 58, 55, .1);
   outline: none;
   width: calc(100% - 120px);
   height: 100%;
   font-size: 100%;
   padding: 0 10px 0 30px;
   margin: 5px 0 0 20px;
-  background-color: rgba(24, 58, 55, .8);
+  background-color: rgba(24, 58, 55, .1);
 }
 
 input:focus, input:hover {
-  border-color: rgba(24, 58, 55, .1);
-  background-color: rgba(24, 58, 55, .1);
+  border-color: rgba(24, 58, 55, .8);
+  background-color: rgba(24, 58, 55, .8);
   transition: 0.4s;
 }
 

@@ -23,9 +23,17 @@ class ChatForm extends HTMLElement {
 
   onGoToChat(event) {
     event.preventDefault();
-
     this.$chatManager.$converwind.style.display = 'flex';
     this.$chatManager.$chatlist.style.display = 'none';
+  }
+
+  animateChat() {
+    const options = { duration: 700 };
+    const keyframes = [
+      { transform: 'translateY(100vh)', opacity: 0 },
+      { transform: 'translateY(0)', opacity: 1 },
+    ];
+    this.animate(keyframes, options);
   }
 }
 
