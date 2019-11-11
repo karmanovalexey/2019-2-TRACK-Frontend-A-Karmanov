@@ -130,48 +130,19 @@ bower_components/
 *.log
 
 dist/
+build/
 
 #### eslint ####
 # These rules are required to lint .eslintrc.js and friends.
 # It is not related to git in any manner.
 !.eslintrc.js
-!stylelint.config.jsweb-components/.idea/
-web-components/build/
-web-components/false/
-web-components/node_modules/
-!.remarkrc.jsweb-components/.idea/
-web-components/build/
-web-components/false/
-web-components/node_modules/
-web-components/.idea/
-web-components/build/
-web-components/false/
-web-components/node_modules/
-#### custom ####web-components/.idea/
-web-components/build/
-web-components/false/
-web-components/node_modules/
-flow-typed/web-components/.idea/
-web-components/build/
-web-components/false/
-web-components/node_modules/
-.nuxt/web-components/.idea/
-web-components/build/
-web-components/false/
-web-components/node_modules/
-.nuxt/*web-components/.idea/
-web-components/build/
-web-components/false/
-web-components/node_modules/
-docs/_book/web-components/.idea/
-web-components/build/
-web-components/false/
-web-components/node_modules/
-jest_*/web-components/.idea/
-web-components/build/
-web-components/false/
-web-components/node_modules/
-.jscpd/web-components/.idea/
-web-components/build/
-web-components/false/
-web-components/node_modules/
+!stylelint.config.js
+!.remarkrc.js
+
+#### custom ####
+flow-typed/
+.nuxt/
+.nuxt/*
+docs/_book/
+jest_*/
+.jscpd/
