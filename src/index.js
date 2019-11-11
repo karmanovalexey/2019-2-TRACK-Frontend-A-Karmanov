@@ -1,18 +1,15 @@
 import React from 'react';
-import { render } from 'react-dom';
-import { Provider } from 'react-redux';
-import store from './store';
-import Routes from './routes';
+import ReactDOM from 'react-dom';
+import { Router } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
+import MessengerContainer from './containers/MessengerContainer.js'
 import './styles/globalStyles.css';
-import * as serviceWorker from './utils/serviceWorker';
 
-render(
-	<Provider store={store}>
-		<Routes />
-	</Provider>,
+export const history = createBrowserHistory();
+
+ReactDOM.render(
+  <Router history={history}>
+    <MessengerContainer />
+  </Router>,
 	document.getElementById('root'),
 );
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
