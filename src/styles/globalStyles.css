@@ -4,6 +4,7 @@ html {
 }
 
 body {
+  height: 100%;
   margin: 0;
   padding: 0;
   font-family:
@@ -21,6 +22,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.root {
+  height: 100%;
+}
+
 code {
   font-family:
     source-code-pro,
@@ -29,4 +34,8 @@ code {
     Consolas,
     'Courier New',
     monospace;
+}
+
+.router {
+  height: 100%;
 }

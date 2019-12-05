@@ -52,6 +52,16 @@
 		"no-tabs": ["error", { "allowIndentationTabs": true }],
 		"semi": ["error", "always"],
 		"quotes": ["error", "single"],
-		"no-mixed-spaces-and-tabs": "error"
+		"no-mixed-spaces-and-tabs": "error",
+		"arrow-body-style": ["error", "always"],
+		"jsx-a11y/no-static-element-interactions": [0, {"handlers": [
+			"onClick",
+      "onMouseDown",
+      "onMouseUp",
+      "onKeyPress",
+      "onKeyDown",
+			"onKeyUp"
+		]}],
+		"react/prop-types":[0]
 	}
 }
