@@ -3,7 +3,7 @@ import ChatFormat from './ChatFormat';
 import styles from '../styles/list.module.css';
 import create from '../assets/edit.svg';
 
-const chatsArrayKey = 'Chats'
+const chatsArrayKey = 'Chats';
 
 function ListContent(props) {
 	let chatCount = 0;
@@ -93,7 +93,7 @@ function ListContent(props) {
 	function chatToLocal(chatObj) {
 		let storageChatArray = JSON.parse(localStorage.getItem(chatsArrayKey));
 		if (storageChatArray === null) {
-			storageChatArray = []
+			storageChatArray = [];
 		}
 		storageChatArray.push(chatObj);
 		localStorage.setItem(chatsArrayKey, JSON.stringify(storageChatArray));
@@ -106,7 +106,7 @@ function ListContent(props) {
 			</button>
 			{chats}
 		</div>
-	)
+	);
 }
 
 export default ListContent;
