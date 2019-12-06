@@ -13,7 +13,7 @@ function ListContent(props) {
 	function getChatProps(chatObj) {
 		const lastmessageText = '';
 		const lastmessageTime = '';
-		const indicator = 0
+		const indicator = 0;
 		// if (chatObj.messages.length !== 0) {
 		// indicator = 1;
 		// const lastmessageObj = chatObj.messages[chatObj.messages.length - 1];
@@ -28,20 +28,20 @@ function ListContent(props) {
 			lastmessageTime,
 			companionName: chatObj.companion,
 			onClickFunc: props.openChatFunc,
-		}
+		};
 
-		return chatElemProps
+		return chatElemProps;
 	}
 
 	function InitChats() {
 		// setTimeout(() => {
 		// ScrollChat.current.scrollTop = 9999;
 		// }, 0);
-		const storageChatArray = JSON.parse(localStorage.getItem(chatsArrayKey))
+		const storageChatArray = JSON.parse(localStorage.getItem(chatsArrayKey));
 		if (storageChatArray !== null) {
-			const chatsInitArray = []
+			const chatsInitArray = [];
 			for (; chatCount < storageChatArray.length; chatCount += 1) {
-				const chatElemProps = getChatProps(storageChatArray[chatCount])
+				const chatElemProps = getChatProps(storageChatArray[chatCount]);
 
 				chatsInitArray.push(
 					<ChatFormat
@@ -53,28 +53,28 @@ function ListContent(props) {
 						companionName={chatElemProps.companionName}
 						onClickFunc={chatElemProps.onClickFunc}
 					/>,
-				)
+				);
 			}
-			return chatsInitArray
+			return chatsInitArray;
 		}
-		return []
+		return [];
 	}
 
 	function handleCreateChat() {
-		const name = prompt('Enter name')
+		const name = prompt('Enter name');
 		const chatObj = {
 			id: chatCount,
 			companion: name,
 			messages: [],
-		}
-		addChat(chatObj)
-		chatToLocal(chatObj)
-		chatCount += 1
+		};
+		addChat(chatObj);
+		chatToLocal(chatObj);
+		chatCount += 1;
 	}
 
 	function addChat(chatObj) {
-		const chatElemProps = getChatProps(chatObj)
-		ScrollChat.current.scrollIntoView()
+		const chatElemProps = getChatProps(chatObj);
+		ScrollChat.current.scrollIntoView();
 		setChats(
 			chats.concat(
 				<ChatFormat
@@ -87,16 +87,16 @@ function ListContent(props) {
 					onClickFunc={chatElemProps.onClickFunc}
 				/>,
 			),
-		)
+		);
 	}
 
 	function chatToLocal(chatObj) {
-		let storageChatArray = JSON.parse(localStorage.getItem(chatsArrayKey))
+		let storageChatArray = JSON.parse(localStorage.getItem(chatsArrayKey));
 		if (storageChatArray === null) {
 			storageChatArray = []
 		}
-		storageChatArray.push(chatObj)
-		localStorage.setItem(chatsArrayKey, JSON.stringify(storageChatArray))
+		storageChatArray.push(chatObj);
+		localStorage.setItem(chatsArrayKey, JSON.stringify(storageChatArray));
 	}
 
 	return (
@@ -109,4 +109,4 @@ function ListContent(props) {
 	)
 }
 
-export default ListContent
+export default ListContent;
