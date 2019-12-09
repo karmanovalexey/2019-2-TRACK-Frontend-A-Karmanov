@@ -34,9 +34,9 @@ function ListContent(props) {
   }
 
   function InitChats() {
-    // setTimeout(() => {
-    // ScrollChat.current.scrollTop = 9999;
-    // }, 0);
+    setTimeout(() => {
+      ScrollChat.current.scrollTop = 9999
+    }, 0)
     const storageChatArray = JSON.parse(localStorage.getItem(chatsArrayKey))
     if (storageChatArray !== null) {
       const chatsInitArray = []

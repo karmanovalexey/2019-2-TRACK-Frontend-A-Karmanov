@@ -1,3 +1,22 @@
+@keyframes open-chat-animation {
+  0% {
+    width: 20%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes add-message-animation {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 /* ConvWindow */
 .conv_window {
   flex-direction: column;
@@ -10,6 +29,10 @@
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
+
+  animation-name: open-chat-animation;
+  animation-duration: 0.2s;
+  animation-timing-function: linear;
 }
 
 .message_form {
@@ -18,6 +41,9 @@
   align-items: flex-end;
   align-self: flex-end;
   margin-right: 2vh;
+
+  animation-name: add-message-animation;
+  animation-duration: 0.5s;
 }
 
 .form_input {
@@ -123,7 +149,7 @@
   transition: 0.2s;
 }
 
-.search:active { 
+.search:active {
   background: rgba(24, 58, 55);
   transition: 0.1s;
 }
@@ -150,14 +176,14 @@
   transition: 0.2s;
 }
 
-.more:active { 
+.more:active {
   background: rgba(24, 58, 55);
   transition: 0.1s;
 }
 
 /* MessageForm */
 .bubble {
-  background-color: rgba(24, 58, 55 ,.8);
+  background-color: rgba(24, 58, 55, 0.8);
   width: 100%;
   display: inline-flex;
   line-height: 4vh;
@@ -166,6 +192,9 @@
   margin-top: 1vh;
   margin-bottom: 1vh;
   align-items: flex-end;
+
+  animation-name: add-message-animation;
+  animation-duration: 0.5s;
 }
 
 .text {
@@ -174,7 +203,7 @@
   align-self: self-end;
   width: auto;
   height: auto;
-  word-break: break-word;  
+  word-break: break-word;
   padding: 10px 10px 5px 20px;
   font-size: calc(2vh + 6px);
 }
@@ -182,7 +211,7 @@
 .time {
   color: rgb(212, 212, 212);
   margin-right: 3vh;
-  font-size: 2vh;       
+  font-size: 2vh;
 }
 
 /* FormInput */
@@ -199,20 +228,20 @@
 input {
   border-width: 1.4px;
   border-radius: 35px;
-  border-color: rgba(24, 58, 55, .1);
+  border-color: rgba(24, 58, 55, 0.1);
   outline: none;
   width: calc(100% - 120px);
   height: 100%;
   font-size: 100%;
   padding: 0 10px 0 30px;
   margin: 5px 0 0 20px;
-  background-color: rgba(24, 58, 55, .1);
+  background-color: rgba(24, 58, 55, 0.1);
 }
 
 input:focus,
 input:hover {
-  border-color: rgba(24, 58, 55, .8);
-  background-color: rgba(24, 58, 55, .8);
+  border-color: rgba(24, 58, 55, 0.8);
+  background-color: rgba(24, 58, 55, 0.8);
   transition: 0.4s;
 }
 
@@ -249,8 +278,8 @@ input:hover {
   transition: 0.2s;
 }
 
-.attach:active { 
-  background: rgba(24, 58, 55 ,.5);
+.attach:active {
+  background: rgba(24, 58, 55, 0.5);
   transition: 0.1s;
 }
 
@@ -276,7 +305,7 @@ input:hover {
   transition: 0.2s;
 }
 
-.send:active { 
-  background: rgba(24, 58, 55 ,.5);
+.send:active {
+  background: rgba(24, 58, 55, 0.5);
   transition: 0.1s;
 }
