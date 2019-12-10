@@ -8,6 +8,7 @@ function ConvWindow(props) {
 	let messageCount = 0;
 	const [inputValue, setInputValue] = useState('');
 	const [messages, setMessages] = useState(InitChats());
+	const ScrollChat = React.createRef();
 
 	function handleChange(event) {
 		const { value } = event.target;
@@ -25,6 +26,9 @@ function ConvWindow(props) {
 	}
 
 	function InitChats(){
+		setTimeout(() => {
+			ScrollChat.current.scrollTop = 9999;
+		}, 0);
 		const storageMessageArray = JSON.parse(localStorage.getItem(props.chatId));
 		if (storageMessageArray !== null) {
 			const messagesInitArray = [];
@@ -92,7 +96,7 @@ function ConvWindow(props) {
 	return (
 		<div className={styles.conv_window} onKeyPress={ handleKeyPress }>
 			<ConvHeader />
-			<div className={ styles.message_container }>
+			<div className={ styles.message_container } ref={ ScrollChat }>
 				{ messages }
 			</div>
 			<InputForm onChange={ handleChange } value={ inputValue } onSend={ handleCreateMessage }/>
