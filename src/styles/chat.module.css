@@ -1,0 +1,311 @@
+@keyframes open-chat-animation {
+  0% {
+    width: 20%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes add-message-animation {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ConvWindow */
+.conv_window {
+  flex-direction: column;
+  height: calc(100% - 5px);
+}
+
+.message_container {
+  width: 100%;
+  height: calc(100% - 100px);
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+
+  animation-name: open-chat-animation;
+  animation-duration: 0.2s;
+  animation-timing-function: linear;
+}
+
+.message_form {
+  max-width: 80%;
+  min-width: 30%;
+  align-items: flex-end;
+  align-self: flex-end;
+  margin-right: 2vh;
+
+  animation-name: add-message-animation;
+  animation-duration: 0.5s;
+}
+
+.form_input {
+  width: 100%;
+}
+
+.conv_head {
+  background-color: rgb(194, 194, 194);
+  width: 100%;
+  border-bottom: solid;
+  border-width: 2px;
+  border-color: rgb(24, 58, 55);
+}
+
+/* ConvHeader */
+.top_line {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.back {
+  width: 40px;
+  height: 40px;
+  border: none;
+  outline: none;
+  margin: 0 5px 0 15px;
+  border-radius: 100%;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.back_icon {
+  fill: rgb(24, 58, 55);
+  width: 100%;
+  height: 100%;
+}
+
+.back:focus,
+.back:hover .back_icon {
+  fill: rgb(255, 255, 255);
+  transition: 0.2s;
+}
+
+.back:active {
+  background: rgba(24, 58, 55);
+  transition: 0.1s;
+}
+
+.interlocutor {
+  height: 100%;
+  width: calc(100% - 180px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.interlocutor_icon {
+  fill: rgb(24, 58, 55);
+  width: 40px;
+  height: 40px;
+  padding: 0 10px;
+}
+
+.interlocutor_info {
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  color: rgb(24, 58, 55);
+}
+
+.interlocutor_name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.interlocutor_time {
+  font-size: 10px;
+}
+
+.search {
+  width: 40px;
+  height: 40px;
+  border: none;
+  outline: none;
+  margin: 0 5px 0 15px;
+  border-radius: 100%;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.search_icon {
+  fill: rgb(24, 58, 55);
+  width: 100%;
+  height: 100%;
+}
+
+.search:focus,
+.search:hover .search-icon {
+  fill: rgb(255, 255, 255);
+  transition: 0.2s;
+}
+
+.search:active {
+  background: rgba(24, 58, 55);
+  transition: 0.1s;
+}
+
+.more {
+  width: 40px;
+  height: 40px;
+  border: none;
+  outline: none;
+  margin: 0 15px 0 5px;
+  border-radius: 100%;
+  background-color: transparent;
+}
+
+.more_icon {
+  fill: rgb(24, 58, 55);
+  width: 100%;
+  height: 100%;
+}
+
+.more:focus,
+.more:hover .more_icon {
+  fill: rgb(255, 255, 255);
+  transition: 0.2s;
+}
+
+.more:active {
+  background: rgba(24, 58, 55);
+  transition: 0.1s;
+}
+
+/* MessageForm */
+.bubble {
+  background-color: rgba(24, 58, 55, 0.8);
+  width: 100%;
+  display: inline-flex;
+  line-height: 4vh;
+  flex-direction: column;
+  border-radius: 3vh;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  align-items: flex-end;
+
+  animation-name: add-message-animation;
+  animation-duration: 0.5s;
+}
+
+.text {
+  color: white;
+  display: flex;
+  align-self: self-end;
+  width: auto;
+  height: auto;
+  word-break: break-word;
+  padding: 10px 10px 5px 20px;
+  font-size: calc(2vh + 6px);
+}
+
+.time {
+  color: rgb(212, 212, 212);
+  margin-right: 3vh;
+  font-size: 2vh;
+}
+
+/* FormInput */
+
+.line_block {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+}
+
+input {
+  border-width: 1.4px;
+  border-radius: 35px;
+  border-color: rgba(24, 58, 55, 0.1);
+  outline: none;
+  width: calc(100% - 120px);
+  height: 100%;
+  font-size: 100%;
+  padding: 0 10px 0 30px;
+  margin: 5px 0 0 20px;
+  background-color: rgba(24, 58, 55, 0.1);
+}
+
+input:focus,
+input:hover {
+  border-color: rgba(24, 58, 55, 0.8);
+  background-color: rgba(24, 58, 55, 0.8);
+  transition: 0.4s;
+}
+
+:host {
+  display: inline-block;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  width: 120px;
+  height: 100%;
+}
+
+.attach {
+  width: 40px;
+  height: 40px;
+  border: none;
+  outline: none;
+  margin: 0 5px 0 15px;
+  border-radius: 100%;
+  background-color: transparent;
+}
+
+.attach_icon {
+  fill: rgb(24, 58, 55);
+  width: 100%;
+  height: 100%;
+}
+
+.attach:focus,
+.attach:hover .attach_icon {
+  fill: rgb(255, 255, 255);
+  transition: 0.2s;
+}
+
+.attach:active {
+  background: rgba(24, 58, 55, 0.5);
+  transition: 0.1s;
+}
+
+.send {
+  width: 40px;
+  height: 40px;
+  border: none;
+  outline: none;
+  margin: 0 15px 0 5px;
+  border-radius: 100%;
+  background-color: transparent;
+}
+
+.send_icon {
+  fill: rgb(24, 58, 55);
+  width: 100%;
+  height: 100%;
+}
+
+.send:focus,
+.send:hover .send_icon {
+  fill: rgb(255, 255, 255);
+  transition: 0.2s;
+}
+
+.send:active {
+  background: rgba(24, 58, 55, 0.5);
+  transition: 0.1s;
+}
