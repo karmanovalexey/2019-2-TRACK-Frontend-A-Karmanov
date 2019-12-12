@@ -1,10 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from '../styles/chat.module.css';
 import back from '../assets/back.svg';
 import user from '../assets/user.svg';
 import search from '../assets/search.svg';
 import more from '../assets/more.svg';
-import { Link } from 'react-router-dom';
 
 function ConvHeader(){
 	return (

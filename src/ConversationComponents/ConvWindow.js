@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import styles from '../styles/chat.module.css';
 import ConvHeader from './ConvHeader';
 import InputForm from './InputForm';
 import MessageForm from './MessageForm';
-import { useParams } from 'react-router-dom';
 
 function ConvWindow(props) {
 	const { chatId } = useParams();

@@ -1,9 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from '../styles/list.module.css';
 import burger from '../assets/menu_list.svg';
 import search from '../assets/search.svg';
 import user from '../assets/user.svg';
-import { Link } from 'react-router-dom';
 
 function ListHeader() {
 	return (
