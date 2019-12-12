@@ -3,8 +3,11 @@ import styles from '../styles/chat.module.css';
 import ConvHeader from './ConvHeader';
 import InputForm from './InputForm';
 import MessageForm from './MessageForm';
+import { useParams } from 'react-router-dom';
 
 function ConvWindow(props) {
+	const { chatId } = useParams();
+
 	let messageCount = 0;
 	const [inputValue, setInputValue] = useState('');
 	const [messages, setMessages] = useState(InitChats());
@@ -29,7 +32,7 @@ function ConvWindow(props) {
 		setTimeout(() => {
 			ScrollChat.current.scrollTop = 9999;
 		}, 0);
-		const storageMessageArray = JSON.parse(localStorage.getItem(props.chatId));
+		const storageMessageArray = JSON.parse(localStorage.getItem(chatId));
 		if (storageMessageArray !== null) {
 			const messagesInitArray = [];
 			for (; messageCount < storageMessageArray.length; messageCount += 1) {
@@ -79,12 +82,12 @@ function ConvWindow(props) {
 	}
 
 	function messageToLocal(messageObj) {
-		let storageMessageArray = JSON.parse(localStorage.getItem(props.chatId));
+		let storageMessageArray = JSON.parse(localStorage.getItem(chatId));
 		if (storageMessageArray === null) {
 			storageMessageArray = [];
 		}
 		storageMessageArray.push(messageObj);
-		localStorage.setItem(+props.chatId, JSON.stringify(storageMessageArray));
+		localStorage.setItem(+chatId, JSON.stringify(storageMessageArray));
 	}
 
 	function handleKeyPress(event) {

@@ -104,7 +104,7 @@ function ListContent(props) {
 			<button className={styles.createchat} onClick={handleCreateChat}>
 				<img className={styles.createchaticon} src={create} alt="create" />
 			</button>
-			{chats}
+			{ chats }
 		</div>
 	);
 }
