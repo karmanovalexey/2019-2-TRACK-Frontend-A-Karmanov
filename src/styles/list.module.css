@@ -10,6 +10,19 @@
   border-bottom-width: 0.5px;
 }
 
+.chatform:link {
+	text-decoration: none;
+	color: black;
+} 
+.chatform:visited {
+	text-decoration: none; 
+	color: black;
+} 
+.chatform:active {
+	text-decoration: none; 
+	color: black;
+}
+
 .createchat {
   width: 90px;
   height: 90px;
@@ -117,11 +130,8 @@
 }
 
 .search:hover {
-  width: 42px;
-  height: 42px;
-  margin: 0 30px 0 13px;
   box-shadow: 0 0 10px black;
-  transition: 0.2s;
+  transition: 0.3s;
 }
 
 .search:active { 
@@ -146,11 +156,8 @@
 }
 
 .burger:hover{
-  width: 42px;
-  height: 42px;
-  margin: 0 3px 0 25px;
   box-shadow: 0 0 10px black;
-  transition: 0.2s;
+  transition: 0.3s;
 }
 
 .burger:active { 
@@ -161,6 +168,36 @@
 .header {
   margin: 0 auto;
   font-size: 36px;
+}
+
+.interlocutor {
+	width: 40px;
+  height: 40px;
+  border: none;
+  outline: none;
+  margin: 0 5px 0 15px;
+  border-radius: 100%;
+	background-color: rgba(0, 0, 0, 0);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+  
+.interlocutor_icon {
+	fill: rgb(24, 58, 55);
+  width: 90%;
+  height: 95%;
+  margin: auto;
+}
+
+.interlocutor:hover{
+  box-shadow: 0 0 10px black;
+  transition: 0.3s;
+}
+
+.interlocutor:active { 
+  background: rgba(24, 58, 55 ,.5);
+  transition: 0.1s;
 }
 
 /* ChatList */

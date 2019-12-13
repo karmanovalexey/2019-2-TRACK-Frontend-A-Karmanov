@@ -1,0 +1,157 @@
+.edit {
+  width: 40px;
+  height: 40px;
+  border: none;
+  outline: none;
+  margin: 0 30px 0 15px;
+  border-radius: 100%;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.edit_icon {
+  fill: rgb(24, 58, 55);
+  width: 90%;
+  height: 95%;
+  margin: auto;
+}
+
+.edit:hover{
+  box-shadow: 0 0 10px black;
+  transition: 0.3s;
+}
+
+.edit:active { 
+  background: rgba(24, 58, 55 ,.5);
+  transition: 0.1s;
+}
+
+.tick {
+  width: 40px;
+  height: 40px;
+  border: none;
+  outline: none;
+  margin: 0 30px 0 15px;
+  border-radius: 100%;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.tick_icon {
+  fill: rgb(24, 58, 55);
+  width: 90%;
+  height: 95%;
+  margin: auto;
+}
+
+.tick:hover{
+  box-shadow: 0 0 10px black;
+  transition: 0.3s;
+}
+
+.tick:active { 
+  background: rgba(24, 58, 55 ,.5);
+  transition: 0.1s;
+}
+
+
+.profile_manager {
+	height: 100%;
+	width: 100%;
+}
+
+.top_line {
+  border: none;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	background-color: rgb(194, 194, 194);
+  border-bottom: solid;
+  border-width: 2px;
+  border-color: rgb(24, 58, 55);
+}
+
+.back {
+  width: 40px;
+  height: 40px;
+  border: none;
+  outline: none;
+  margin: 0 5px 0 15px;
+  border-radius: 100%;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.back_icon {
+  fill: rgb(24, 58, 55);
+  width: 90%;
+  height: 95%;
+  margin: auto;
+}
+
+.back:hover{
+  box-shadow: 0 0 10px black;
+  transition: 0.3s;
+}
+
+.back:active { 
+  background: rgba(24, 58, 55 ,.5);
+  transition: 0.1s;
+}
+
+.profile_content {
+	height: 80%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.photo {
+	width: 100px;
+	height: 100px;
+}
+
+.photo:focus,
+.photo:hover {
+	width: 150px;
+	height: 150px;
+  transition: 0.4s;
+}
+
+.photo_icon {
+	fill: rgb(24, 58, 55);
+  width: 100%;
+  height: 100%;
+  padding: 0 10px;
+}
+
+.full_name {
+  font-size: 36px;
+}
+
+.nameViewer:focus,
+.nameViewer:hover {
+	font-size: 96px;
+  transition: 0.4s;
+}
+
+.username {
+  font-size: 36px;
+}
+
+.usernameViewer:focus,
+.usernameViewer:hover {
+	font-size: 96px;
+  transition: 0.4s;
+}
+
+.bio {
+  font-size: 36px;
+}
+
+.bioViewer:focus,
+.bioViewer:hover {
+	font-size: 96px;
+  transition: 0.4s;
+}
