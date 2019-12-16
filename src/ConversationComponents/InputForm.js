@@ -4,18 +4,18 @@ import send from '../assets/paper-plane.svg';
 import attachment from '../assets/attachment.svg';
 import geo from '../assets/geo.svg';
 import audio from '../assets/audio.svg';
-import stop from '../assets/stop.svg'
+import stop from '../assets/stop.svg';
 
 function InputForm(props){
 
 	function handleDrag(event){
-		event.target.style.background = "darkolivegreen";
+		event.target.style.background = 'darkolivegreen';
 		event.stopPropagation();
 		event.preventDefault();
 	}
 
 	function handleLeave(event){
-		event.target.style.background = "";
+		event.target.style.background = '';
 		event.stopPropagation();
 		event.preventDefault();
 	}
@@ -38,7 +38,7 @@ function InputForm(props){
 						type="file" 
 						id="fileElem"
 						accept="image/*" 
-						style={{display: "none"}}
+						style={{display: 'none'}}
 						onChange={props.onChange}
 					/>
 					<label htmlFor="fileElem">

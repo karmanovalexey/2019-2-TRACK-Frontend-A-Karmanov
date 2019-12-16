@@ -5,9 +5,9 @@ import ConvHeader from './ConvHeader';
 import InputForm from './InputForm';
 import MessageForm from './MessageForm';
 
-let img_url = '';
-let audio_url = '';
-let Mb = 1024*1024;
+let imgUrl = '';
+let audioUrl = '';
+const Mb = 1024*1024;
 
 function ConvWindow(props) {
 	const { chatId } = useParams();
@@ -21,20 +21,20 @@ function ConvWindow(props) {
 
 	function InitAudioShown(){
 		return ({
-			micDisplay: "flex",
-			stopDisplay: "none"
-		})
+			micDisplay: 'flex',
+			stopDisplay: 'none'
+		});
 	}
 	function InitFileSent() {
 		return ({
-			display: "none"
-		})
+			display: 'none'
+		});
 	}
 
 	function handleFile(file) {
-		img_url = window.URL.createObjectURL(file);
-		if(img_url!== '') {
-			setFileSent({display: "inline"});
+		imgUrl = window.URL.createObjectURL(file);
+		if(imgUrl!== '') {
+			setFileSent({display: 'inline'});
 			const data = new FormData();
 			data.append('file', file);
 			data.append('chat_id', chatId);
@@ -50,7 +50,7 @@ function ConvWindow(props) {
 	}
 
 	function handleChange(event) {
-		if(event.target.type === "file") {
+		if(event.target.type === 'file') {
 			handleFile(event.target.files[0]);
 			event.target.value = '';
 		} else {
@@ -101,10 +101,10 @@ function ConvWindow(props) {
 	}
 
 	function handleCreateMessage(){
-		if (inputValue!=='' || img_url!=='' || audio_url!=='') {
+		if (inputValue!=='' || imgUrl!=='' || audioUrl!=='') {
 			const messageObj = {
-				img_src: img_url,
-				audio_src: audio_url,
+				img_src: imgUrl,
+				audio_src: audioUrl,
 				key: messageCount,
 				companion: props.companionName,
 				messageText: inputValue,
@@ -114,10 +114,10 @@ function ConvWindow(props) {
 			messageToLocal(messageObj);
 			messageCount += 1;
 			setInputValue('');
-			setFileSent({display: "none"});
-			img_url = '';
-			audio_url = '';
-			window.URL.revokeObjectURL(img_url);
+			setFileSent({display: 'none'});
+			imgUrl = '';
+			audioUrl = '';
+			window.URL.revokeObjectURL(imgUrl);
 		}
 	}
 
@@ -154,7 +154,7 @@ function ConvWindow(props) {
 	}
 
 	function handleGeo(event) {
-		if("geolocation" in navigator){
+		if('geolocation' in navigator){
 			navigator.geolocation.getCurrentPosition((position) => {
 				setInputValue(`https://www.openstreetmap.org/#map=18/${position.coords.latitude}/${position.coords.longitude}`);
 			});
@@ -172,8 +172,8 @@ function ConvWindow(props) {
 		preventAndStop(event);
 		const file = event.dataTransfer.files[0];
 		handleFile(file);
-		event.target.style.backgroundColor = "";
-	}
+		event.target.style.backgroundColor = '';
+	};
 
 	async function getMedia() {
 		try {
@@ -182,32 +182,32 @@ function ConvWindow(props) {
 			mediaRecorder.current = new MediaRecorder(stream);
 			mediaRecorder.current.start();
 		} catch(err) {
-			alert("Failed to get audio");
+			alert('Failed to get audio');
 		}
 	}
 
 	function handleRecordingStart(event){
 		setAudioShown({
-			micDisplay: "none",
-			stopDisplay: "flex"
+			micDisplay: 'none',
+			stopDisplay: 'flex'
 		});
 		getMedia();
 	}
 
 	function handleRecordingStop(event){
 		setAudioShown({
-			micDisplay: "flex",
-			stopDisplay: "none"
+			micDisplay: 'flex',
+			stopDisplay: 'none'
 		});
 		mediaRecorder.current.stop();
 		let chunks = [];
-		mediaRecorder.current.addEventListener('stop', (event) => {
+		mediaRecorder.current.addEventListener('stop', (ev) => {
 			const blob = new Blob(chunks, { type: mediaRecorder.mimeType });
 			chunks = [];
-			audio_url = URL.createObjectURL(blob);
+			audioUrl = URL.createObjectURL(blob);
 			handleCreateMessage();
 		});
-		mediaRecorder.current.addEventListener('dataavailable', (event) => {
+		mediaRecorder.current.addEventListener('dataavailable', (ev) => {
 			chunks.push(event.data);
 		});
 	}
@@ -219,14 +219,14 @@ function ConvWindow(props) {
 			</div>
 			<span style={{
 				display: fileSent.display,
-				position: "fixed",
-				top: "calc(100% - 49px)",
-				left: "calc(100% - 106px)",
-				height: "5px",
-				width: "5px",
-				backgroundColor: "rgb(24, 58, 55)",
-				borderRadius: "100%"
-				}}/>
+				position: 'fixed',
+				top: 'calc(100% - 49px)',
+				left: 'calc(100% - 106px)',
+				height: '5px',
+				width: '5px',
+				backgroundColor: 'rgb(24, 58, 55)',
+				borderRadius: '100%'
+			}}/>
 			<InputForm audioStatus={ audioShown } onAudioStart={handleRecordingStart} onAudioStop={handleRecordingStop} onDragOver={ preventAndStop } onDrop={ drop }  onChange={ handleChange } value={ inputValue } onSend={ handleCreateMessage } onGeo={ handleGeo }/>
 		</div>
 	);
