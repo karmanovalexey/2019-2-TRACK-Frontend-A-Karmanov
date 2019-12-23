@@ -14,12 +14,6 @@ function ListContent(props) {
 		const lastmessageText = '';
 		const lastmessageTime = '';
 		const indicator = 0;
-		// if (chatObj.messages.length !== 0) {
-		// indicator = 1;
-		// const lastmessageObj = chatObj.messages[chatObj.messages.length - 1];
-		// lastmessageText = lastmessageObj.messageText;
-		// lastmessageTime = new Date(lastmessageObj.messageTime).toTimeString().slice(0, 5);
-		// }
 		const chatElemProps = {
 			key: chatCount,
 			id: chatCount,
@@ -79,7 +73,7 @@ function ListContent(props) {
 			chats.concat(
 				<ChatFormat
 					key={chatElemProps.key}
-					data-id={chatElemProps.id}
+					id={chatElemProps.id}
 					indicator={chatElemProps.indicator}
 					lastmessageText={chatElemProps.lastmessageText}
 					lastmessageTime={chatElemProps.lastmessageTime}

@@ -10,19 +10,19 @@
 /* ConvWindow */
 .conv_window {
   flex-direction: column;
-  height: calc(100% - 5px);
+  height: 100%;
 }
 
 .message_container {
   width: 100%;
-  height: calc(100% - 100px);
+  height: calc(100% - 97px);
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
 }
 
 .message_form {
-  max-width: 80%;
+  max-width: 60%;
   min-width: 30%;
   align-items: flex-end;
   align-self: flex-end;
@@ -187,13 +187,15 @@
 
 .text {
   color: white;
-  display: flex;
   align-self: self-end;
   width: auto;
   height: auto;
   word-break: break-word;
   padding: 10px 10px 5px 20px;
-  font-size: calc(2vh + 6px);
+	font-size: calc(2vh + 6px);
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
 }
 
 .time {
@@ -213,12 +215,13 @@
   width: 100%;
 }
 
+
 input {
   border-width: 1.4px;
   border-radius: 35px;
   border-color: rgba(24, 58, 55, 0.1);
   outline: none;
-  width: calc(100% - 120px);
+  width: calc(100% - 240px);
   height: 100%;
   font-size: 100%;
   padding: 0 10px 0 30px;
@@ -240,7 +243,7 @@ input:hover {
 .buttons {
   display: flex;
   flex-direction: row;
-  width: 120px;
+  width: 240px;
   height: 100%;
 }
 
@@ -249,9 +252,9 @@ input:hover {
   height: 40px;
   border: none;
   outline: none;
-  margin: 0 5px 0 15px;
+  margin: 0 5px 0 5px;
   border-radius: 100%;
-  background-color: transparent;
+	background-color: transparent;
 }
 
 .attach_icon {
