@@ -1,0 +1,53 @@
+.init {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: 5vh;
+	color: rgba(24, 58, 55)
+}
+
+.initform {
+	border-width: 1.4px;
+  border-radius: 35px;
+  border-color: rgba(24, 58, 55, 0.1);
+  outline: none;
+  width: 70%;
+  height: 100px;
+  font-size: 100%;
+  padding: 0 10px 0 30px;
+  margin: 69px 0 69px 20px;
+  background-color: rgba(24, 58, 55, 0.1);
+}
+
+.enter{
+	border-radius: 10%;
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.08);
+	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.08);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.08);
+	color: #fff;
+	display:block;
+	width:100px;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	padding: 8px 16px;
+	margin: 20px auto;
+	text-decoration: none;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+	-webkit-transition: background-color 0.1s linear;
+	-moz-transition: background-color 0.1s linear;
+	-o-transition: background-color 0.1s linear;
+	transition: background-color 0.1s linear;        
+}
+
+	.enter {
+	background-color: rgba(24, 58, 55, 0.7);
+	border: 1px solid rgba(24, 58, 55, 0.7);
+}
+					
+	.enter:hover {
+	background-color: rgba(24, 58, 55, 0.2);
+}
